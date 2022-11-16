@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06314AAB2925A97000FC1F14 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		067B5F502925A7E5008507A7 /* RickAndMortyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		067B5F532925A7E5008507A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		067B5F552925A7E5008507A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		067B5F472925A7E5008507A7 = {
 			isa = PBXGroup;
 			children = (
+				06314AAB2925A97000FC1F14 /* README.md */,
 				067B5F522925A7E5008507A7 /* RickAndMortyApp */,
 				067B5F692925A7E7008507A7 /* RickAndMortyAppTests */,
 				067B5F732925A7E7008507A7 /* RickAndMortyAppUITests */,
