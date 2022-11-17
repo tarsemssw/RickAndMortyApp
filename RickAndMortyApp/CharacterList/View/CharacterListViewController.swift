@@ -9,6 +9,7 @@ import UIKit
 
 protocol CharacterListPresenting {
     func viewDidLoad()
+    func searchCharacterByName(name:String)
 }
 
 final class CharacterListViewController: UIViewController {
@@ -47,12 +48,16 @@ final class CharacterListViewController: UIViewController {
     }
     @IBOutlet var navigationBarTitle: UILabel!
     @IBOutlet var searchButton: UIBarButtonItem!
-    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var searchBar: UISearchBar!{
+        didSet{
+            searchBar.delegate = self
+        }
+    }
     
     // MARK: @IBAction
     
     @IBAction func searchButtonTapped(_ sender: Any) {
-        self.navigationItem.titleView = searchBar
+        searchBarBeginEditing()
     }
     
     
@@ -64,6 +69,33 @@ final class CharacterListViewController: UIViewController {
         presenter.viewDidLoad()
     }
     
+    
+    // MARK: Methods
+    func searchCharacterByName(name:String){
+        if name.count > 0{
+            navigationBarTitle.text = "showing results for \"\(name)\""
+            presenter.searchCharacterByName(name: name)
+        }
+    }
+    
+    func searchBarEndEditing(){
+        self.navigationItem.titleView = navigationBarTitle
+        searchBar.text = nil
+        searchBar.endEditing(true)
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+        self.navigationItem.rightBarButtonItem = searchButton
+    }
+    
+    func searchBarBeginEditing(){
+        self.navigationItem.titleView = searchBar
+        self.navigationItem.rightBarButtonItem = nil
+        self.searchBar.showsCancelButton = true
+        self.searchBar.becomeFirstResponder()
+        if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton {
+            cancelButton.isEnabled = true
+        }
+    }
 }
 
 // MARK: CharacterListDisplaying
@@ -107,3 +139,29 @@ extension CharacterListViewController: UITableViewDataSource{
     
 }
 
+// MARK: UISearchBarDelegate
+
+extension CharacterListViewController: UISearchBarDelegate{
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = true
+        return true
+    }
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBarEndEditing()
+        return true
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count > 2 {
+            searchCharacterByName(name: searchText)
+        }
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text {
+            searchCharacterByName(name: searchText)
+        }
+        searchBarEndEditing()
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBarEndEditing()
+    }
+}

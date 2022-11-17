@@ -66,6 +66,10 @@ final class CharacterListPresenter {
     private func fetchCharacterList(){
         fetchData(urlPath: URLPath.characterList, queryItems: nil)
     }
+    private func searchCharacterListByName(name:String){
+        let urlQueryItemName = URLQueryItem(name: URLPath.paramName, value: name)
+        fetchData(urlPath: URLPath.characterList, queryItems: [urlQueryItemName])
+    }
     
     private func fetchData(urlPath: String, queryItems: [URLQueryItem]?){
         display?.showIndicator(true)
@@ -135,6 +139,9 @@ extension CharacterListPresenter: CharacterListPresenting{
     func viewDidLoad() {
         display?.show(screenTitle: Constant.screenTitle)
         fetchCharacterList()
+    }
+    func searchCharacterByName(name: String) {
+        searchCharacterListByName(name: name)
     }
 }
 
