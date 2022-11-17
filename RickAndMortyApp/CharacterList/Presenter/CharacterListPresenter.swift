@@ -5,8 +5,14 @@
 //  Created by Tarsem Singh on 16/11/22.
 //
 
+import Foundation
+import UIKit
+
 protocol CharacterListDisplaying: AnyObject {
     func show(screenTitle: String)
+    func showIndicator(_ shouldShow: Bool)
+    func showNoDataView(with message: String)
+    func show(list: [CharacterCellItem])
 }
 
 final class CharacterListPresenter {
@@ -29,6 +35,14 @@ final class CharacterListPresenter {
     init(display: CharacterListDisplaying){
         self.display = display
     }
+    
+    // MARK:- Methods
+    
+    // MARK: Private
+    
+    private func fetchCharacterList(){
+        display?.showIndicator(true)
+    }
 
 }
 
@@ -39,6 +53,7 @@ final class CharacterListPresenter {
 extension CharacterListPresenter: CharacterListPresenting{
     func viewDidLoad() {
         display?.show(screenTitle: Constant.screenTitle)
+        fetchCharacterList()
     }
 }
 
