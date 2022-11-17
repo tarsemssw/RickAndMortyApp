@@ -145,8 +145,8 @@ extension CharacterListPresenter: CharacterListPresenting{
     func searchCharacterByName(name: String) {
         searchCharacterListByName(name: name)
     }
-    func didSelectCharacter(characterCellItem: CharacterCellItem) {
-        coordinator?.didSelectCharacter(characterCellItem: characterCellItem)
+    func didSelectCharacter(character: Character) {
+        coordinator?.didSelectCharacter(character: character)
     }
 }
 

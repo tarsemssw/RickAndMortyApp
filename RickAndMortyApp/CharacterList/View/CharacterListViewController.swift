@@ -10,7 +10,7 @@ import UIKit
 protocol CharacterListPresenting {
     func viewDidLoad()
     func searchCharacterByName(name:String)
-    func didSelectCharacter(characterCellItem: CharacterCellItem)
+    func didSelectCharacter(character: Character)
 }
 
 final class CharacterListViewController: UIViewController {

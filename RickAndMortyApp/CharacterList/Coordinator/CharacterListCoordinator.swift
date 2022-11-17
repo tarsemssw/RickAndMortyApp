@@ -12,7 +12,7 @@ protocol Coordinator {
     func start()
 }
 protocol CharacterListCoordinating: AnyObject {
-    func didSelectCharacter(characterCellItem: CharacterCellItem)
+    func didSelectCharacter(character: Character)
 }
 
 
@@ -24,6 +24,7 @@ final class CharacterListCoordinator : Coordinator{
     private enum Identifier{
         static let name = "Main"
         static let characterListViewController = "CharacterListViewController"
+        static let characterDetailViewController = "CharacterDetailViewController"
     }
     
     // MARK: Properties
@@ -43,14 +44,17 @@ final class CharacterListCoordinator : Coordinator{
         characterListViewController.presenter = CharacterListPresenter(display: characterListViewController,coordinator: self)
         navigationController.pushViewController(characterListViewController, animated: false)
     }
-    func navigateToDetailViewController(characterCellItem: CharacterCellItem){
-     
+    func navigateToDetailViewController(character: Character){
+        let characterDetailViewController = UIStoryboard(name: Identifier.name, bundle: nil).instantiateViewController(identifier: Identifier.characterDetailViewController) as CharacterDetailViewController
+        characterDetailViewController.presenter = CharacterDetailPresenter(display: characterDetailViewController, coordinator: CharacterDetailCoordinator(navigationController: navigationController))
+        characterDetailViewController.character = character
+        navigationController.pushViewController(characterDetailViewController, animated: true)
     }
 }
 
 extension CharacterListCoordinator : CharacterListCoordinating{
-    func didSelectCharacter(characterCellItem: CharacterCellItem) {
-        navigateToDetailViewController(characterCellItem: characterCellItem)
+    func didSelectCharacter(character: Character) {
+        navigateToDetailViewController(character: character)
     }
 }
 

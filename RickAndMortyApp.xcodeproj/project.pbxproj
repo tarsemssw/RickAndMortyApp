@@ -31,6 +31,9 @@
 		068131E62925E3AF00C0189C /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131E52925E3AF00C0189C /* MockURLSessionDataTask.swift */; };
 		068131E82925E72F00C0189C /* ImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131E72925E72F00C0189C /* ImageLoaderTests.swift */; };
 		068131EA2925E92800C0189C /* CharacterListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131E92925E92800C0189C /* CharacterListPresenterTests.swift */; };
+		068131EC2925EE5500C0189C /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131EB2925EE5500C0189C /* CharacterDetailViewController.swift */; };
+		068131F22925F53B00C0189C /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131F12925F53B00C0189C /* CharacterDetailPresenter.swift */; };
+		068131F52925F70000C0189C /* CharacterDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131F42925F70000C0189C /* CharacterDetailCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		068131E52925E3AF00C0189C /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		068131E72925E72F00C0189C /* ImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTests.swift; sourceTree = "<group>"; };
 		068131E92925E92800C0189C /* CharacterListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListPresenterTests.swift; sourceTree = "<group>"; };
+		068131EB2925EE5500C0189C /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		068131F12925F53B00C0189C /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
+		068131F42925F70000C0189C /* CharacterDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				06314AB52925B5DA00FC1F14 /* Character.swift */,
-				06314ABD2925C15400FC1F14 /* CharacterCellItem.swift */,
 				06314AC52925CD5600FC1F14 /* Service */,
 			);
 			path = Model;
@@ -133,6 +138,7 @@
 				067B5F572925A7E5008507A7 /* CharacterListViewController.swift */,
 				068131DD2925E12600C0189C /* CharacterListViewController+TableView.swift */,
 				068131D92925DC1700C0189C /* CharacterListViewController+Search.swift */,
+				06314ABD2925C15400FC1F14 /* CharacterCellItem.swift */,
 				06314AB92925C0F700FC1F14 /* CharacterListCell.swift */,
 				06314AC32925C36600FC1F14 /* CharacterListCell.xib */,
 			);
@@ -225,6 +231,9 @@
 		068131DB2925DE8800C0189C /* CharacterDetail */ = {
 			isa = PBXGroup;
 			children = (
+				068131EF2925F50000C0189C /* View */,
+				068131F02925F51900C0189C /* Presenter */,
+				068131F32925F6E200C0189C /* Coordinator */,
 			);
 			path = CharacterDetail;
 			sourceTree = "<group>";
@@ -252,6 +261,30 @@
 				068131E52925E3AF00C0189C /* MockURLSessionDataTask.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		068131EF2925F50000C0189C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				068131EB2925EE5500C0189C /* CharacterDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		068131F02925F51900C0189C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				068131F12925F53B00C0189C /* CharacterDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		068131F32925F6E200C0189C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				068131F42925F70000C0189C /* CharacterDetailCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,9 +427,12 @@
 				067B5F542925A7E5008507A7 /* AppDelegate.swift in Sources */,
 				06314AB62925B5DA00FC1F14 /* Character.swift in Sources */,
 				06314AB42925AD4600FC1F14 /* CharacterListCoordinator.swift in Sources */,
+				068131EC2925EE5500C0189C /* CharacterDetailViewController.swift in Sources */,
 				06314ABE2925C15400FC1F14 /* CharacterCellItem.swift in Sources */,
+				068131F22925F53B00C0189C /* CharacterDetailPresenter.swift in Sources */,
 				067B5F562925A7E5008507A7 /* SceneDelegate.swift in Sources */,
 				06314AC72925D03E00FC1F14 /* APIClient.swift in Sources */,
+				068131F52925F70000C0189C /* CharacterDetailCoordinator.swift in Sources */,
 				068131DA2925DC1700C0189C /* CharacterListViewController+Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,7 +29,7 @@ extension CharacterListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchBarEndEditing()
         let characterCellItem = cellItems[indexPath.row]
-        presenter.didSelectCharacter(characterCellItem: characterCellItem)
+        presenter.didSelectCharacter(character: characterCellItem.character)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
