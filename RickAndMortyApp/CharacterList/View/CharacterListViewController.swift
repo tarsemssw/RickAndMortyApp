@@ -17,6 +17,23 @@ final class CharacterListViewController: UIViewController {
     
     var presenter: CharacterListPresenting!
     
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noDataView: UIView!
+    @IBOutlet weak var noDatalabel: UILabel!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet var navigationBarTitle: UILabel!
+    @IBOutlet var searchButton: UIBarButtonItem!
+    @IBOutlet var searchBar: UISearchBar!    
+    
+    // MARK: @IBAction
+    
+    @IBAction func searchButtonTapped(_ sender: Any) {
+        self.navigationItem.titleView = searchBar
+    }
+    
+    
     
     // MARK: Lifecycle
     
@@ -31,6 +48,8 @@ final class CharacterListViewController: UIViewController {
 
 extension CharacterListViewController: CharacterListDisplaying{
     func show(screenTitle: String) {
-        self.title = screenTitle
+        self.navigationBarTitle.text = screenTitle
+        self.navigationItem.titleView = navigationBarTitle
+        self.navigationItem.rightBarButtonItem = searchButton
     }
 }
