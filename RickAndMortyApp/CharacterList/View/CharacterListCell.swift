@@ -32,5 +32,10 @@ class CharacterListCell: UITableViewCell {
 
     func configure(cellItem: CharacterCellItem){
         self.cellItem = cellItem
+        name.text = cellItem.character.name
+        episodes.text = "\(cellItem.character.episode.count) episodes"
+        cellItem.loadImage {[weak self] image in
+            self?.characterImageView.image = image
+        }
     }
 }

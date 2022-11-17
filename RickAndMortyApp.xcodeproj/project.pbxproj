@@ -13,6 +13,8 @@
 		06314ABA2925C0F700FC1F14 /* CharacterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06314AB92925C0F700FC1F14 /* CharacterListCell.swift */; };
 		06314ABE2925C15400FC1F14 /* CharacterCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06314ABD2925C15400FC1F14 /* CharacterCellItem.swift */; };
 		06314AC42925C36600FC1F14 /* CharacterListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06314AC32925C36600FC1F14 /* CharacterListCell.xib */; };
+		06314AC72925D03E00FC1F14 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06314AC62925D03E00FC1F14 /* APIClient.swift */; };
+		06314AC92925D04800FC1F14 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06314AC82925D04800FC1F14 /* ImageLoader.swift */; };
 		067B5F542925A7E5008507A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B5F532925A7E5008507A7 /* AppDelegate.swift */; };
 		067B5F562925A7E5008507A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B5F552925A7E5008507A7 /* SceneDelegate.swift */; };
 		067B5F582925A7E5008507A7 /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B5F572925A7E5008507A7 /* CharacterListViewController.swift */; };
@@ -49,6 +51,8 @@
 		06314AB92925C0F700FC1F14 /* CharacterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCell.swift; sourceTree = "<group>"; };
 		06314ABD2925C15400FC1F14 /* CharacterCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellItem.swift; sourceTree = "<group>"; };
 		06314AC32925C36600FC1F14 /* CharacterListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListCell.xib; sourceTree = "<group>"; };
+		06314AC62925D03E00FC1F14 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		06314AC82925D04800FC1F14 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		067B5F502925A7E5008507A7 /* RickAndMortyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		067B5F532925A7E5008507A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		067B5F552925A7E5008507A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				06314AB52925B5DA00FC1F14 /* Character.swift */,
 				06314ABD2925C15400FC1F14 /* CharacterCellItem.swift */,
+				06314AC52925CD5600FC1F14 /* Service */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +138,15 @@
 				06314AB32925AD4600FC1F14 /* CharacterListCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		06314AC52925CD5600FC1F14 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				06314AC62925D03E00FC1F14 /* APIClient.swift */,
+				06314AC82925D04800FC1F14 /* ImageLoader.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		067B5F472925A7E5008507A7 = {
@@ -321,12 +335,14 @@
 			files = (
 				06314AB22925AD0900FC1F14 /* CharacterListPresenter.swift in Sources */,
 				067B5F582925A7E5008507A7 /* CharacterListViewController.swift in Sources */,
+				06314AC92925D04800FC1F14 /* ImageLoader.swift in Sources */,
 				06314ABA2925C0F700FC1F14 /* CharacterListCell.swift in Sources */,
 				067B5F542925A7E5008507A7 /* AppDelegate.swift in Sources */,
 				06314AB62925B5DA00FC1F14 /* Character.swift in Sources */,
 				06314AB42925AD4600FC1F14 /* CharacterListCoordinator.swift in Sources */,
 				06314ABE2925C15400FC1F14 /* CharacterCellItem.swift in Sources */,
 				067B5F562925A7E5008507A7 /* SceneDelegate.swift in Sources */,
+				06314AC72925D03E00FC1F14 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
