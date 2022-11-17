@@ -49,12 +49,14 @@ final class CharacterListPresenter {
     // MARK: Private
     
     private weak var display: CharacterListDisplaying?
+    private weak var coordinator: CharacterListCoordinating?
     private var apiClient: APIClient!
     private var imageLoader: ImageLoading
     
     // MARK: Initialisers
-    init(display: CharacterListDisplaying, apiClient: APIClient = APIClientImplementation(), imageLoader: ImageLoading = ImageLoader()){
+    init(display: CharacterListDisplaying, coordinator: CharacterListCoordinating, apiClient: APIClient = APIClientImplementation(), imageLoader: ImageLoading = ImageLoader()){
         self.display = display
+        self.coordinator = coordinator
         self.apiClient = apiClient
         self.imageLoader = imageLoader
     }
@@ -142,6 +144,9 @@ extension CharacterListPresenter: CharacterListPresenting{
     }
     func searchCharacterByName(name: String) {
         searchCharacterListByName(name: name)
+    }
+    func didSelectCharacter(characterCellItem: CharacterCellItem) {
+        coordinator?.didSelectCharacter(characterCellItem: characterCellItem)
     }
 }
 

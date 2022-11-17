@@ -10,13 +10,14 @@ import UIKit
 protocol CharacterListPresenting {
     func viewDidLoad()
     func searchCharacterByName(name:String)
+    func didSelectCharacter(characterCellItem: CharacterCellItem)
 }
 
 final class CharacterListViewController: UIViewController {
     
     // MARK: Private enums
     
-    private enum Constant{
+    enum Constant{
         static let cellIdentifier = "CharacterListCell"
     }
     
@@ -25,7 +26,7 @@ final class CharacterListViewController: UIViewController {
     var presenter: CharacterListPresenting!
     // MARK: Private
     
-    private var cellItems: [CharacterCellItem] = []{
+    var cellItems: [CharacterCellItem] = []{
         didSet{
             tableView.reloadData()
         }
@@ -36,7 +37,9 @@ final class CharacterListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!{
         didSet{
             tableView.dataSource = self
+            tableView.delegate = self
             tableView.register(UINib(nibName: Constant.cellIdentifier, bundle: nil), forCellReuseIdentifier: Constant.cellIdentifier)
+            tableView.keyboardDismissMode = .onDrag
         }
     }
     @IBOutlet weak var noDataView: UIView!
@@ -99,17 +102,3 @@ extension CharacterListViewController: CharacterListDisplaying{
     }
 }
 
-// MARK: UITableViewDataSource
-
-extension CharacterListViewController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.cellIdentifier, for: indexPath) as! CharacterListCell
-        cell.configure(cellItem: cellItems[indexPath.row])
-        return cell
-    }
-    
-}

@@ -11,6 +11,10 @@ protocol Coordinator {
     var navigationController: UINavigationController{get set}
     func start()
 }
+protocol CharacterListCoordinating: AnyObject {
+    func didSelectCharacter(characterCellItem: CharacterCellItem)
+}
+
 
 final class CharacterListCoordinator : Coordinator{
     
@@ -36,7 +40,17 @@ final class CharacterListCoordinator : Coordinator{
     
     func start() {
         let characterListViewController = UIStoryboard(name: Identifier.name, bundle: nil).instantiateViewController(identifier: Identifier.characterListViewController) as CharacterListViewController
-        characterListViewController.presenter = CharacterListPresenter(display: characterListViewController)
+        characterListViewController.presenter = CharacterListPresenter(display: characterListViewController,coordinator: self)
         navigationController.pushViewController(characterListViewController, animated: false)
     }
+    func navigateToDetailViewController(characterCellItem: CharacterCellItem){
+     
+    }
 }
+
+extension CharacterListCoordinator : CharacterListCoordinating{
+    func didSelectCharacter(characterCellItem: CharacterCellItem) {
+        navigateToDetailViewController(characterCellItem: characterCellItem)
+    }
+}
+
