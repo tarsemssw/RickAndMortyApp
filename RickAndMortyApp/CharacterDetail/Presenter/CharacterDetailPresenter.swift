@@ -19,7 +19,8 @@ final class CharacterDetailPresenter {
     // MARK: Properties
     
     // MARK: Private
-    
+    private var imageHandler: ((UIImage) -> Void)?
+
     private weak var display: CharacterDetailDisplaying?
     private weak var coordinator: CharacterDetailCoordinating?
     private var imageLoader: ImageLoading
@@ -34,11 +35,14 @@ final class CharacterDetailPresenter {
     // MARK:- Methods
     
     // MARK: Private
-    func loadImage(url:String){
+    func loadImage(url:String, handler: @escaping (UIImage) -> Void){
+        imageHandler = handler
         imageLoader.load(urlPath: url) { data in
             if let image = UIImage(data: data){
                 self.display?.show(image: image)
+                self.imageHandler?(image)
             }
+            
         }
     }
 }
@@ -50,7 +54,7 @@ final class CharacterDetailPresenter {
 extension CharacterDetailPresenter: CharacterDetailPresenting{
     func viewDidLoad(character: Character) {
         display?.show(character: character)
-        loadImage(url: character.image)
+        loadImage(url: character.image) { image in}
     }
 }
 

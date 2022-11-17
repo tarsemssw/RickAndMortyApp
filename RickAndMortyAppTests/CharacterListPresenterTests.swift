@@ -239,13 +239,13 @@ final class MockCharacterListDisplay: CharacterListDisplaying {
     }
 }
 final class MockCharacterListCoordinator: CharacterListCoordinating {
-
-    private(set) var showSelectionCount = 0
-    private(set) var showCharacter: CharacterCellItem?
     
-    func didSelectCharacter(characterCellItem: RickAndMortyApp.CharacterCellItem) {
+    private(set) var showSelectionCount = 0
+    private(set) var showCharacter: Character?
+    
+    func didSelectCharacter(character: RickAndMortyApp.Character) {
         showSelectionCount += 1
-        showCharacter = characterCellItem
+        showCharacter = character
     }
 }
 

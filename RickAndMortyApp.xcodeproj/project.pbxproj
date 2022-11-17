@@ -34,6 +34,7 @@
 		068131EC2925EE5500C0189C /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131EB2925EE5500C0189C /* CharacterDetailViewController.swift */; };
 		068131F22925F53B00C0189C /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131F12925F53B00C0189C /* CharacterDetailPresenter.swift */; };
 		068131F52925F70000C0189C /* CharacterDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131F42925F70000C0189C /* CharacterDetailCoordinator.swift */; };
+		068131F72926056400C0189C /* CharacterDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131F62926056400C0189C /* CharacterDetailPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		068131EB2925EE5500C0189C /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		068131F12925F53B00C0189C /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
 		068131F42925F70000C0189C /* CharacterDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCoordinator.swift; sourceTree = "<group>"; };
+		068131F62926056400C0189C /* CharacterDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				068131DF2925E31600C0189C /* APIClientTests.swift */,
 				068131E72925E72F00C0189C /* ImageLoaderTests.swift */,
 				068131E92925E92800C0189C /* CharacterListPresenterTests.swift */,
+				068131F62926056400C0189C /* CharacterDetailPresenterTests.swift */,
 				068131E12925E38500C0189C /* Shared */,
 			);
 			path = RickAndMortyAppTests;
@@ -444,6 +447,7 @@
 				068131EA2925E92800C0189C /* CharacterListPresenterTests.swift in Sources */,
 				068131E82925E72F00C0189C /* ImageLoaderTests.swift in Sources */,
 				067B5F6B2925A7E7008507A7 /* RickAndMortyAppTests.swift in Sources */,
+				068131F72926056400C0189C /* CharacterDetailPresenterTests.swift in Sources */,
 				068131E62925E3AF00C0189C /* MockURLSessionDataTask.swift in Sources */,
 				068131E02925E31600C0189C /* APIClientTests.swift in Sources */,
 				068131E42925E3A300C0189C /* MockAPIClient.swift in Sources */,
