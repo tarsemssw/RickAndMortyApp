@@ -24,6 +24,7 @@
 		067B5F6B2925A7E7008507A7 /* RickAndMortyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B5F6A2925A7E7008507A7 /* RickAndMortyAppTests.swift */; };
 		067B5F752925A7E7008507A7 /* RickAndMortyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B5F742925A7E7008507A7 /* RickAndMortyAppUITests.swift */; };
 		067B5F772925A7E7008507A7 /* RickAndMortyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B5F762925A7E7008507A7 /* RickAndMortyAppUITestsLaunchTests.swift */; };
+		068131DA2925DC1700C0189C /* CharacterListViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068131D92925DC1700C0189C /* CharacterListViewController+Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		067B5F702925A7E7008507A7 /* RickAndMortyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		067B5F742925A7E7008507A7 /* RickAndMortyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAppUITests.swift; sourceTree = "<group>"; };
 		067B5F762925A7E7008507A7 /* RickAndMortyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		068131D92925DC1700C0189C /* CharacterListViewController+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterListViewController+Search.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				067B5F572925A7E5008507A7 /* CharacterListViewController.swift */,
+				068131D92925DC1700C0189C /* CharacterListViewController+Search.swift */,
 				06314AB92925C0F700FC1F14 /* CharacterListCell.swift */,
 				06314AC32925C36600FC1F14 /* CharacterListCell.xib */,
 			);
@@ -343,6 +346,7 @@
 				06314ABE2925C15400FC1F14 /* CharacterCellItem.swift in Sources */,
 				067B5F562925A7E5008507A7 /* SceneDelegate.swift in Sources */,
 				06314AC72925D03E00FC1F14 /* APIClient.swift in Sources */,
+				068131DA2925DC1700C0189C /* CharacterListViewController+Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
